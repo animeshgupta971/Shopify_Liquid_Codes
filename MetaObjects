@@ -18,3 +18,17 @@ Link Url : https://community.shopify.com/c/technical-q-a/how-to-read-metaobject-
   <p>{{ meta.content | metafield_tag }}</p>
 </div>
   {% endfor %}
+        {% assign icons = shop.metaobjects.icon.values %}
+
+        {% for icon in icons %}  
+	        <div>
+	            <img
+	                src="{{ icon.image.value | image_url: width: 45 }}"
+	                alt="{{ image.alt | escape }}"
+	            >
+
+	            <span>
+	                {{ icon.title }}
+	            </span>
+	        </div>
+        {% endfor %}
