@@ -9,3 +9,12 @@ Link Url : https://community.shopify.com/c/technical-q-a/how-to-read-metaobject-
 
   <img src="{{ logo_file_name }}" alt="{{ logo_alt_text }}" />
 {% endif %}
+
+
+{% for meta in shop.metaobjects.meta_data.values %}
+<div class="meta-tesing">
+  <img src="{{ meta.image | img_url: '900' }}">
+  <h1>{{ meta.heading }}</h1>
+  <p>{{ meta.content | metafield_tag }}</p>
+</div>
+  {% endfor %}
