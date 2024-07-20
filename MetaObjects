@@ -1,0 +1,10 @@
+How to use Metaobjects in shopify
+
+{% assign shop_metaobject = shop.metafields.custom.my_metaobject_key %}
+
+{% if shop_metaobject %}
+  {% assign logo_file_name = shop_metaobject.logo_file_name %}
+  {% assign logo_alt_text = shop_metaobject.logo_alt_text %}
+
+  <img src="{{ logo_file_name }}" alt="{{ logo_alt_text }}" />
+{% endif %}
